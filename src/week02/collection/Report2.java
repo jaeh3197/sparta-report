@@ -9,13 +9,15 @@ public class Report2 {
 
         if (Objects.equals(type, "List")) {
             ArrayList<String> strList = new ArrayList<>();
-            for (int i = 0; i <= strList.size() ;i++) {
+
+            for (int i = 0; i <= strList.size(); i++) {
                 strList.add(sc.nextLine());
                 if (Objects.equals(strList.get(i), "끝")) {
                     strList.remove(i);
                     break;
                 }
             }
+
             for (int j = 0; j < strList.size(); j++) {
                 if (j == 0) {
                     System.out.println("[" + "List 로 저장된 " + strList.get(j) + "]");
@@ -25,13 +27,18 @@ public class Report2 {
             }
         } else if (Objects.equals(type, "Set")) {
             Set<String> strSet = new LinkedHashSet<>();
-            for (int i = 0; i <= strSet.size() ;i++) {
+
+//            for (int i = 0; i <= strSet.size() ;i++) {   //피드백 받기 전
+//                strSet.add(sc.nextLine());
+//                if (strSet.contains("끝")) {
+//                    strSet.remove("끝");
+//                    break;
+//                }
+//            }
+            while (!strSet.contains("끝")) {     //피드백 받고 난후
                 strSet.add(sc.nextLine());
-                if (strSet.contains("끝")) {
-                    strSet.remove("끝");
-                    break;
-                }
             }
+
             List<String> strToList = new ArrayList<>(strSet);
             for (int j = 0; j < strSet.size(); j++) {
                 if (j == 0) {
@@ -40,9 +47,13 @@ public class Report2 {
                     System.out.println(j + ". " + strToList.get(j));
                 }
             }
+//            System.out.println("[" + "Set 으로 저장된 " + strToList.get(j) + "]");  //피드백 받고 난 후
+//            for (int j = 1; j < strSet.size(); j++) {
+//                    System.out.println(j + ". " + strToList.get(j));
+//            }
         } else if (Objects.equals(type, "Map")) {
-            Map <Integer, String> mapStr = new HashMap<>();
-            for (int i = 0; i <= mapStr.size() ;i++) {
+            Map<Integer, String> mapStr = new HashMap<>();
+            for (int i = 0; i <= mapStr.size(); i++) {
                 mapStr.put(i, sc.nextLine());
                 if (Objects.equals(mapStr.get(i), "끝")) {
                     mapStr.remove(i);
