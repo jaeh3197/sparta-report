@@ -8,7 +8,7 @@ public class Report2 {
         String type = sc.nextLine();
 
         if (Objects.equals(type, "List")) {
-            ArrayList<String> strList = new ArrayList<String>();
+            ArrayList<String> strList = new ArrayList<>();
             for (int i = 0; i <= strList.size() ;i++) {
                 strList.add(sc.nextLine());
                 if (Objects.equals(strList.get(i), "끝")) {
